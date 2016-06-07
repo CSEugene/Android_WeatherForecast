@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/fragment1_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/overview_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="130dp">
+
+
+        <TextView
+            android:id="@+id/tvToday_Weather"
+            android:layout_width="200dp"
+            android:layout_height="match_parent"
+            android:fontFamily="monospace"
+            android:gravity="center_vertical"
+            android:text="WEDNESDAY 3pm\nCloudy"
+            android:textColor="@color/background_floating_material_light"
+            android:textSize="38sp"
+            android:textStyle="bold"
+            android:layout_alignParentTop="true"
+            android:layout_toEndOf="@+id/view"
+            android:layout_marginStart="20dp" />
+        <View
+            android:id="@+id/view"
+            android:layout_width="1dp"
+            android:layout_height="70dp"
+            android:background="#e0e0e0"
+            android:gravity="center_vertical"
+            android:layout_centerVertical="true"
+            android:layout_alignEnd="@+id/img_weather" />
+
+
+        <ImageView
+            android:id="@+id/img_weather"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/sunny1"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="30dp"
+            android:layout_alignBottom="@+id/view"
+            android:layout_alignTop="@+id/view" />
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/temp_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:weightSum="1"
+        android:layout_below="@+id/overview_layout"
+        android:layout_alignParentStart="true">
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/details_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="6"
+        android:layout_marginBottom="40dp"
+        android:layout_above="@+id/my_recycler_view"
+        android:layout_alignParentStart="true">
+
+        <ImageView
+            android:id="@+id/img_windSpeed"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignParentStart="false"
+            android:layout_marginStart="10dp"
+
+            android:layout_weight="1"
+            android:src="@drawable/ic_wind_speed" />
+
+        <TextView
+            android:id="@+id/tv_windspeed"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/img_windSpeed"
+            android:layout_alignTop="@+id/img_windSpeed"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/img_windSpeed"
+            android:fontFamily="monospace"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/abc_primary_text_material_dark"
+            android:textSize="28dp"
+            android:text="x"
+            android:layout_weight="1" />
+
+        <ImageView
+            android:id="@+id/img_temp"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignTop="@+id/tv_windspeed"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/tv_windspeed"
+            android:layout_weight="1"
+            android:src="@drawable/ic_pressure" />
+
+        <TextView
+            android:id="@+id/tv_pressure"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignBottom="@+id/img_temp"
+            android:layout_alignTop="@+id/img_temp"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/img_temp"
+            android:fontFamily="monospace"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/abc_primary_text_material_dark"
+            android:textSize="28dp"
+            android:text="x"
+            android:layout_weight="1" />
+
+        <ImageView
+
+            android:id="@+id/img_rainRate"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_alignTop="@+id/tv_pressure"
+            android:layout_marginStart="20dp"
+            android:layout_toEndOf="@+id/tv_pressure"
+            android:layout_weight="1"
+            android:src="@drawable/ic_humidity" />
+
+        <TextView
+            android:id="@+id/tv_humidity"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_alignTop="@+id/img_rainRate"
+            android:layout_marginEnd="10dp"
+            android:layout_marginStart="5dp"
+            android:layout_toEndOf="@+id/img_rainRate"
+            android:layout_weight="1"
+            android:fontFamily="monospace"
+            android:gravity="center_vertical"
+            android:lines="1"
+            android:textAlignment="center"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:textColor="@color/abc_primary_text_material_dark"
+            android:textSize="28dp"
+            android:text="x" />
+    </LinearLayout>
+
+
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/my_recycler_view"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:scrollbars="horizontal"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:background="@color/background_material_light"/>
+
+    <TextView
+        android:id="@+id/tv_temp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:fontFamily="serif"
+        android:textAlignment="center"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:textColor="@color/abc_primary_text_material_dark"
+        android:textSize="120sp"
+        android:gravity="center_vertical"
+        android:text="30"
+        android:layout_below="@+id/temp_layout"
+        android:layout_alignParentStart="true"
+        android:layout_marginTop="10dp" />
+
+</RelativeLayout>
